@@ -1,0 +1,72 @@
+{
+    "layer": "top", // Waybar will appear at the top of other windows. 
+    "position": "bottom", // Appears at the top of the screen. Possible values are top, right, bottom, left.
+    
+	"modules-left": ["custom/appmenu", "wlr/taskbar"],
+    
+	"modules-center": ["clock"],
+    
+	"modules-right": ["network", "pulseaudio", "tray", "battery"],
+    
+	
+	
+	
+	
+	"custom/appmenu":{
+		"format": "󰣇",
+		"on-click": "rofi -show drun"
+	},
+
+	"battery":{
+		"format": "{capacity}%",
+		"tooltip-format": "{capacity}%",
+
+	},
+
+
+
+    "clock": {
+        	"format": "{:%I:%M %p}",
+        	"rotate": 0,
+        	"format-alt": "{:%A, %B %d, %Y (%R)}",
+        	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+        	"calendar": {
+            		"mode": "month",
+            		"format": {
+                	    "months": "<span color='#aecce6'><b>{}</b></span>",
+			    		"days": "<span color='#aecce6'><b>{}</b></span>",
+                	    "weekdays": "<span color='#df373a'><b>{}</b></span>",
+                	    "today": "<span color='#df373a'><b>{}</b></span>"
+            	        }
+               }
+    },
+    
+
+    "network": {
+		    "format-wifi": " ",
+        	"format-disconnected": "󰖪",
+        	"interval": 2,
+			"tooltip-format-wifi": "{essid}",
+			"tooltip-format-disconnected": "Disconnected",
+			"on-click": "networkmanager_dmenu",
+    },
+    
+     "pulseaudio": {
+    		"format": " ",
+    		"format-bluetooth": "(󰂰)",
+    		"format-muted": "",
+        	"default": ["", " "]
+    		},
+    		"scroll-step": 3,
+    		"on-click": "pavucontrol",
+    		"ignored-sinks": ["Easy Effects Sink"]
+	},
+    
+	// A grouped module for all session buttons, like logout, shutdown, etc.
+	// Commands used are Hyprland specific. Check and replace commands for other desktops.
+    
+    
+
+   
+    		
+}
